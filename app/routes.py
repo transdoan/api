@@ -116,25 +116,25 @@ def scrape():
     if request.method == 'GET':
         return render_template('scraper.html')
     payload = request.get_json()
-    scraper.scrape.apply_async(args=[payload['caches'], payload['face_book_cookie'], payload['people_search_session_cookie'], payload['csrf_token']])
+    scraper.scrape.apply_async(args=[payload['caches'], payload['face_book_cookie'], payload['people_search_session_cookie'], payload['csrf_token'], payload['yaleconnect_cookie']])
     return '', 200
 
 
 @app.route('/apidocs')
 @login_required
 def apidocs():
-    return render_template('apidocs.html')
+    return render_template('apidocs.html', title='API')
 
 
 @app.route('/about')
 @login_required
 def about():
-    return render_template('about.html')
+    return render_template('about.html', title='About')
 
 
 @app.route('/faq')
 def faq():
-    return render_template('faq.html')
+    return render_template('faq.html', title='FAQ')
 
 
 @app.route('/hide_me')
@@ -198,12 +198,6 @@ def auth():
         db.session.add(key)
         db.session.commit()
     return jsonify({'token': key.token, 'expires_in': expires_in})
-
-
-"""
-def untuple(tuples):
-    return [t[0] for t in tuples]
-"""
 
 
 def get_years():

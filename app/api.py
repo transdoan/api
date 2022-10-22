@@ -3,7 +3,7 @@ from sqlalchemy import distinct
 import time
 from app import db, cas
 from app.util import to_json, fail, succ
-from app.models import User, Person
+from app.models import User, Person, Group
 
 
 api_bp = Blueprint('api', __name__)
@@ -57,7 +57,10 @@ def api_filters():
 
 @api_bp.route('/students', methods=['POST'])
 def api_students():
-    criteria = request.get_json() or {}
+    try:
+        criteria = request.get_json(force=True) or {}
+    except:
+        criteria = {}
     if not criteria.get('filters'):
         criteria['filters'] = {}
     if not criteria['filters'].get('school_code'):
@@ -69,9 +72,22 @@ def api_students():
 
 @api_bp.route('/people', methods=['POST'])
 def api_people():
-    criteria = request.get_json() or {}
+    try:
+        criteria = request.get_json(force=True) or {}
+    except:
+        criteria = {}
     people = Person.search(criteria)
     return to_json(people)
+
+
+@api_bp.route('/groups', methods=['POST'])
+def api_groups():
+    try:
+        criteria = request.get_json(force=True) or {}
+    except:
+        criteria = {}
+    groups = Group.search(criteria)
+    return to_json(groups)
 
 
 def untuple(tuples):

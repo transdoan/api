@@ -17,7 +17,7 @@ body {
     padding: 15px 20px;
     color: #00356b;
     background: white;
-    border-top: 20px solid #00356b;
+    border-top: 15px solid #00356b;
 }
 header {
     margin-bottom: 10px;
@@ -28,7 +28,7 @@ header img {
     display: inline-block;
 }
 header #logo {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     margin-top: 4px;
 }
@@ -37,6 +37,10 @@ h2 {
     display: inline-block;
     margin-top: -2px;
     margin-left: 2px;
+}
+ul {
+    margin-left: 15px;
+    line-height: 1.5;
 }
 nav {
     float: right;
@@ -67,29 +71,32 @@ a {
 label {
     display: block;
 }
-input[type="text"],
 button, .button,
+input[type="text"],
 textarea {
     font: inherit;
-    border-radius: 20px;
+    border-radius: 23px;
     outline: 0;
 }
-input[type="text"] {
-    padding: 8px 10px;
-    border: solid 1px lightgray;
+input[type="text"],
+textarea {
+    padding: 10px 12px;
+    border: none;
+    background: rgba(0, 21, 42, 0.05);
 }
 button, .button {
-    padding: 9px 12px;
+    padding: 10px 12px;
     border: none;
     background: #00356b;
     display: inline-block;
     color: white;
     text-decoration: none;
     cursor: pointer;
+    margin-right: 2px;
 }
 button.outline, .button.outline {
-    padding: 8px 12px;
-    border: solid 1px lightgray;
+    border: none;
+    box-shadow: 0 0 4px rgba(0, 21, 42, 0.2);
     background: none;
     color: #00356b;
 }
@@ -106,9 +113,7 @@ button[disabled] {
 textarea {
     max-width: 100%;
     margin-bottom: 10px;
-    padding: 10px;
     overflow: visible;
-    border: solid 1px lightgray;
     resize: none;
     display: block;
 }

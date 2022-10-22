@@ -3,9 +3,11 @@
 }
 
 #submit {
-    padding: 8px 10px;
+    padding: 10px 12px;
 }
 
+.filters {
+}
 #clear_filters {
     margin-top: 8px;
 }
@@ -13,16 +15,20 @@
     margin-top: 8px;
     display: inline-block;
     vertical-align: top;
-    padding: 8px 12px;
-    border: solid 1px lightgray;
+    padding: 8px 11px 10px;
+    border: solid 2px white;
+    box-shadow: 0 0 4px rgba(0, 21, 42, 0.2);
     border-radius: 20px;
     user-select: none;
     cursor: pointer;
+    margin-right: 2px;
 }
 .filter.active {
     border-color: #00356b;
-    border-width: 2px;
-    padding: 7px 11px;
+    box-shadow: none;
+}
+.filter.collapsed {
+    padding: 8px 11px;
 }
 .filter h4 {
     margin-bottom: 5px;

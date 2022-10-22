@@ -1,8 +1,11 @@
+#list {
+    margin-top: 15px;
+}
 #list > div {
     width: 3in;
     display: inline-block;
     vertical-align: top;
-    margin: 0 10px 10px 0;
+    margin: 0 12px 10px 0;
     text-align: left;
 }
 #list > div h3 .netid {
@@ -33,7 +36,7 @@
     color: #00d018;
 }
 .pills {
-    margin: 5px 0 3px;
+    margin: 5px 0 4px -1px;
 }
 .pill {
     background: #00356b;
@@ -44,9 +47,21 @@
     margin-top: 2px;
     margin-right: 4px;
 }
+.row {
+    margin-left: 1px;
+}
 .row.leave {
     color: #00d018;
 }
 .row.visitor {
     color: #E4572E;
+}
+.row img {
+    width: 15px;
+    vertical-align: center;
+    margin: 7px 5px 0 -1px;
+}
+.row i.fa-graduation-cap {
+    margin-left: -2px;
+    margin-right: 1px;
 }
